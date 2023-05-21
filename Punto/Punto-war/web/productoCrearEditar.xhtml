@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/main.xhtml">
+
+            <ui:define name="content">
+              
+                
+                <f:view>
+
+                    <div style="  margin-left: 30%;
+    width: 50%;">
+                    <h:form>
+                        <h1><h:outputText value="Productos Entrepise"/></h1>
+                        
+                        
+                        <h:inputHidden id="id" value="#{productoBean.producto.id}"/>
+                        <p:panelGrid columns="2">
+                        
+                            <p:outputLabel value="Producto:" for="nombreProducto" />
+                            <p:inputText id="nombreProducto" value="#{productoBean.producto.nombreProducto}" title="NombreProducto" required="true" requiredMessage="The NombreProducto field is required."/>
+                            <p:outputLabel value="Precio Unitario:" for="precioUnidad" />
+                            <p:inputText id="precioUnidad" value="#{productoBean.producto.precioUnidad}" title="PrecioUnidad" required="true" requiredMessage="The PrecioUnidad field is required."/>
+                            <p:outputLabel value="Unidades Existentes:" for="unidadesEnExistencia" />
+                            <p:inputText id="unidadesEnExistencia" value="#{productoBean.producto.unidadesEnExistencia}" title="UnidadesEnExistencia" required="true" requiredMessage="The UnidadesEnExistencia field is required."/>
+                            <p:outputLabel value="Proveedor:" for="proveedorid" />
+                            <p:selectOneMenu id="proveedorid" value="#{productoBean.provedorSelec}" required="true" requiredMessage="The Proveedorid field is required.">
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{proveedorBean.proveedorAll}" itemLabel="#{item.nombre}" var="item" itemValue="#{item.id}"/>
+                            </p:selectOneMenu>
+                            <p:commandButton action="#{productoBean.agregar()}"  icon="pi pi-plus" styleClass="rounded-button ui-button-success" rendered="#{productoBean.producto.id==null}" />
+                            <p:commandButton action="#{productoBean.editar()}" icon="pi pi-pencil" styleClass="rounded-button ui-button-warning" rendered="#{productoBean.producto.id!=null}" />
+                            <p:commandButton action="#{productoBean.permisoPage()}" icon="pi pi-fast-backward" styleClass="rounded-button ui-button-warning"  immediate="true" />
+                            
+                        </p:panelGrid>
+                        
+                        
+       
+                        
+                    </h:form>
+                    </div>
+                </f:view>
+
+                
+                
+        
+
+                
+                
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:body>
+
+        <ui:composition template="./templates/main.xhtml">
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <p:commandButton action="productoCrearEditar.xhtml" actionListener="#{productoBean.prepararNuevo()}" icon="pi pi-plus" styleClass="rounded-button ui-button-success"/>
+                        <p:dataTable value="#{productoBean.all}" var="item">
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NombreProducto"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nombreProducto}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="PrecioUnidad"/>
+                                </f:facet>
+                                <h:outputText value="#{item.precioUnidad}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="UnidadesEnExistencia"/>
+                                </f:facet>
+                                <h:outputText value="#{item.unidadesEnExistencia}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Proveedorid"/>
+                                </f:facet>
+                                <h:outputText value="#{item.proveedorid.nombre}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Opciones"/>
+                                </f:facet>
+                                <p:commandButton action="productoCrearEditar.xhtml" actionListener="#{productoBean.prepararEditar(item)}" icon="pi pi-pencil" styleClass="rounded-button ui-button-warning"/>
+                                <p:commandButton action="productoEliminar.xhtml" actionListener="#{productoBean.prepararEliminar(item)}" icon="pi pi-times" styleClass="rounded-button ui-button-danger"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </f:view>
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+</html>

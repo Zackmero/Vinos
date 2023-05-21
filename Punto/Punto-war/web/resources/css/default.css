@@ -1,0 +1,132 @@
+body {
+background: #200122;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    margin: 10px;
+   
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    border-bottom: 1px solid #AFAFAF; 
+    font-size:  32px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+a:link, a:visited {
+  color: bisque;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #045491;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+#boton {
+  background-color: #5dc1b9;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boton:hover {
+  background-color: #8c8c8c;
+}
+#boton1 {
+  background-color: #5dc1b9;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boton1:hover {
+  background-color: #8c8c8c;
+}
+
+
+#boton2 {
+  background-color: #5dc1b9;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boton2:hover {
+  background-color: #8c8c8c;
+}
+
+
+#boton3 {
+  background-color: #5dc1b9;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boton3:hover {
+  background-color: #8c8c8c;
+}
+
+
+#boton4 {
+  background-color: #5dc1b9;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boton4:hover {
+  background-color: #8c8c8c;
+}
+
+
+
+#boton5 {
+  background-color: #5dc1b9;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boton5:hover {
+  background-color: #8c8c8c;
+}
+
+
+.menuBarWhite .ui-menuitem-text {
+    color: #ffffff;
+}

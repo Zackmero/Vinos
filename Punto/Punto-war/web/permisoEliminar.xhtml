@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets<f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="View"/></h1>
+                <p:panelGrid columns="2">
+                    <h:inputHidden id="id" value="#{permisoBean.permiso.id}" />
+                    <h:outputText value="Id:"/>
+                    <h:outputText value="#{permisoBean.permiso.id}" title="Id"/>
+                    <h:outputText value="TipoPermiso:"/>
+                    <h:outputText value="#{permisoBean.permiso.tipoPermiso}" title="TipoPermiso"/>
+                </p:panelGrid>
+                
+                
+                 <p:commandButton action="#{permisoBean.eliminar()}" icon="pi pi-times" styleClass="rounded-button ui-button-danger ui-button-outlined"/>
+                 
+                 <p:commandButton action="#{permisoBean.permisoPage()}"  icon="pi pi-fast-backward" styleClass="rounded-button ui-button-help ui-button-outlined" />
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

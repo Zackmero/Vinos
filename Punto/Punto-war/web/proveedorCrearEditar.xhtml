@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+     <ui:composition template="./templates/main.xhtml">
+    <ui:define name="content">
+        
+        <f:view >
+
+            <div style="  margin-left: 30%;
+    width: 50%;">
+                <h:form>
+                    <h1><h:outputText value="Proveedor Production"/></h1>
+
+                    <h:inputHidden id ="id" value="#{proveedorBean.proveedor.id}"/>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Nombre:" for="nombre" />
+                        <p:inputText id="nombre" value="#{proveedorBean.proveedor.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                        <p:outputLabel value="Marca:" for="marca" />
+                        <p:inputText id="marca" value="#{proveedorBean.proveedor.marca}" title="Marca" required="true" requiredMessage="The Marca field is required."/>
+                        <p:outputLabel value="Telefono:" for="telefono" />
+                        <p:inputText id="telefono" value="#{proveedorBean.proveedor.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
+                        
+                        
+                        <p:commandButton action="#{proveedorBean.agregar()}"  icon="pi pi-plus" styleClass="rounded-button ui-button-success" rendered="#{proveedorBean.proveedor.id==null}"/>
+                        <p:commandButton action="#{proveedorBean.editar()}"  icon="pi pi-pencil" styleClass="rounded-button ui-button-warning" rendered="#{proveedorBean.proveedor.id!=null}" />
+                        <p:commandButton action="proveedorPage.xhtml" icon="pi pi-fast-backward" styleClass="rounded-button ui-button-info" immediate="true" />
+
+                    </p:panelGrid>
+
+
+
+                
+                </h:form>
+            </div>
+
+        </f:view>
+
+    </ui:define>
+
+</ui:composition>
+
+
+    </h:body>
+</html>
+

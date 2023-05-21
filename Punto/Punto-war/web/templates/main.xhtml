@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+
+            <p:menubar styleClass="menuBarWhite">
+                <p:menuitem action="#{permisoBean.Cerrar()}" value="Cerrar Session" />                
+                <p:menuitem action="#{permisoBean.permisoPage()}" value="Modulo Permiso" />
+                <p:menuitem action="#{proveedorBean.permisoPage()}" value="Modulo Proveedor" />
+                <p:menuitem action="#{productoBean.permisoPage()}" value="Modulo Productos" />
+                <p:menuitem action="#{productoBean.permisoPage()}" value="Modulo Rol" />
+                <p:menuitem action="#{ventaBean.vistaPage()}" value="Modulo Ventas" />
+                <p:menuitem action="#{productoBean.permisoPage()}" value="Modulo vendedor" />
+
+            </p:menubar>
+        </div>
+
+        <div>
+           
+            <div id="content" class="left_content">
+                <ui:insert name="content" >
+                </ui:insert>
+            </div>
+        </div>
+
+        <div id="bottom">
+            <div>
+
+
+                <p>© 2023 VinosPuebla. Todos los derechos reservados.</p>
+                <h3>>Correo electrónico: <a href="mailto:info@vinospuebla.com">info@vinospuebla.com</a></h3>
+
+
+            </div>
+            <div>
+
+
+
+                <p>Calle 5 de Mayo #123, Col. Centro, Puebla, México</p>
+                <h2>Teléfono: <a href="tel:+522221234567">+52 222 123 4567</a></h2>
+
+
+
+            </div>
+        </div>
+
+    </h:body>
+
+</html>
