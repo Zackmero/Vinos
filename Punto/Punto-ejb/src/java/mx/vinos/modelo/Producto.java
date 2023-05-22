@@ -150,7 +150,7 @@ public class Producto implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Producto[ id=" + id + " ]";
+        return "mx.vinos.modelo.Producto[ id=" + id + " ]";
     }
     
 }

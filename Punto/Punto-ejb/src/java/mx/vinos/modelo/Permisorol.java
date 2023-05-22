@@ -5,8 +5,6 @@
  */
 package mx.vinos.modelo;
 
-import mx.vinos.modelo.Permiso;
-import mx.vinos.modelo.Rol;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -99,7 +97,7 @@ public class Permisorol implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Permisorol[ id=" + id + " ]";
+        return "mx.vinos.modelo.Permisorol[ id=" + id + " ]";
     }
     
 }

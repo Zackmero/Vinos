@@ -109,7 +109,7 @@ public class Permiso implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Permiso[ id=" + id + " ]";
+        return "mx.vinos.modelo.Permiso[ id=" + id + " ]";
     }
     
 }

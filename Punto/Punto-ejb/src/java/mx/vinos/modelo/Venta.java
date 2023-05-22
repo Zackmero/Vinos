@@ -57,9 +57,9 @@ public class Venta implements Serializable {
     @JoinColumn(name = "producto_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Producto productoId;
-    @JoinColumn(name = "vendedor_id", referencedColumnName = "id")
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Vendedor vendedorId;
+    private Usuario usuarioId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ventaId")
     private List<Ventaproducto> ventaproductoList;
 
@@ -108,12 +108,12 @@ public class Venta implements Serializable {
         this.productoId = productoId;
     }
 
-    public Vendedor getVendedorId() {
-        return vendedorId;
+    public Usuario getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setVendedorId(Vendedor vendedorId) {
-        this.vendedorId = vendedorId;
+    public void setUsuarioId(Usuario usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     @XmlTransient
@@ -147,7 +147,7 @@ public class Venta implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Venta[ id=" + id + " ]";
+        return "mx.vinos.modelo.Venta[ id=" + id + " ]";
     }
     
 }

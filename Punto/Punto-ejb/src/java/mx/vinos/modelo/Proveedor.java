@@ -5,7 +5,6 @@
  */
 package mx.vinos.modelo;
 
-import mx.vinos.modelo.Producto;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -140,7 +139,7 @@ public class Proveedor implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Proveedor[ id=" + id + " ]";
+        return "mx.vinos.modelo.Proveedor[ id=" + id + " ]";
     }
     
 }

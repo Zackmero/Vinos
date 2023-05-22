@@ -86,7 +86,7 @@ public class Ventaproducto implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Ventaproducto[ id=" + id + " ]";
+        return "mx.vinos.modelo.Ventaproducto[ id=" + id + " ]";
     }
     
 }

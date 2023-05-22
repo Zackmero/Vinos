@@ -48,8 +48,6 @@ public class Rol implements Serializable {
     @Column(name = "rol")
     private String rol;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rolId")
-    private List<Vendedor> vendedorList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "rolId")
     private List<Usuario> usuarioList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rolId")
     private List<Permisorol> permisorolList;
@@ -80,15 +78,6 @@ public class Rol implements Serializable {
 
     public void setRol(String rol) {
         this.rol = rol;
-    }
-
-    @XmlTransient
-    public List<Vendedor> getVendedorList() {
-        return vendedorList;
-    }
-
-    public void setVendedorList(List<Vendedor> vendedorList) {
-        this.vendedorList = vendedorList;
     }
 
     @XmlTransient
@@ -131,7 +120,7 @@ public class Rol implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.vinos.BL.Rol[ id=" + id + " ]";
+        return "mx.vinos.modelo.Rol[ id=" + id + " ]";
     }
     
 }
