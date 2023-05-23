@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+    
+    </h:head>
+    <h:body>
+     
+  <ui:composition template="./templates/main.xhtml">
+            <ui:define name="content">
+                
+        
+        <p:commandButton action="rolCrearEditar.xhtml" value="Nuevo"/>
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Lista de roles" style="color: black"/></h1> 
+                <p:dataTable value="#{rolBean.rolAll}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Rol"/>
+                        </f:facet>
+                        <h:outputText value="#{item.rol}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Opciones"/>
+                        </f:facet>
+                        <p:commandButton action="rolCrearEditar.xhtml" actionListener="#{rolBean.prepararEditar(item)}" value="editar" />
+                        <p:commandButton action="rolEliminar.xhtml" actionListener="#{rolBean.prepararEliminar(item)}" value="eliminar" />
+                    </p:column>
+                    
+                    
+                </p:dataTable>
+            </h:form>
+        </f:view>
+
+                </ui:define>
+
+        </ui:composition>
+        
+    </h:body>
+</html>
+
