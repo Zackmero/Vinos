@@ -20,7 +20,7 @@ import mx.vinos.BL.UsuariorBLLocal;
 
 /**
  *
- * @author Migue
+ * @author Migueasdasdasdasd
  */
 @Named(value = "ventaBean")
 @SessionScoped
