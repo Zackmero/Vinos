@@ -13,7 +13,7 @@ import mx.vinos.modelo.Venta;
 
 /**
  *
- * @author Migue
+ * @author Antonio
  */
 @Stateless
 public class VentaBL implements VentaBLLocal {
@@ -50,14 +50,9 @@ public class VentaBL implements VentaBLLocal {
         return pd.getPorId(id);
 
     }
-    
-    
-        @Override
-    public List<Venta>getAll() {
-        
-       VentaDAO pr = new VentaDAO();
-        
-        return pr.getTodo();
-    }
-    
+    @Override
+    public List<Venta>getTodo(){
+    VentaDAO pd = new VentaDAO();
+    return pd.getTodo();
+}
 }

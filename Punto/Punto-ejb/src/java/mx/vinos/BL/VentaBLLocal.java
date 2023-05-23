@@ -12,7 +12,7 @@ import mx.vinos.modelo.Venta;
 
 /**
  *
- * @author Migue
+ * @author Antonio
  */
 @Local
 public interface VentaBLLocal {
@@ -25,6 +25,5 @@ public interface VentaBLLocal {
 
     Venta buscarPorId(int id);
     
-    
-   List<Venta>getAll();
+    List<Venta> getTodo();
 }

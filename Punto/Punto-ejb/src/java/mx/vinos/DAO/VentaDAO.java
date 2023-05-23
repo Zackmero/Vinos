@@ -14,7 +14,7 @@ import mx.vinos.modelo.Venta;
 
 /**
  *
- * @author Migue
+ * @author Antonio
  */
 public class VentaDAO {
 
@@ -73,8 +73,6 @@ public class VentaDAO {
     
     
     public List<Venta> getTodo(){
-
-
            Query q = em.createNamedQuery("Venta.findAll");
            return q.getResultList();
         
