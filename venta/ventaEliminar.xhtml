@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/main.xhtml">
+
+            <ui:define name="content">
+
+
+
+  
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="Eliminar"/></h1>
+                        <h:inputHidden id="id" value="#{ventaBean.venta.id}" />
+                        <p:panelGrid columns="2">
+                            <h:outputText value="Id:"/>
+                            <h:outputText value="#{ventaBean.venta.id}" title="Id"/>
+                            <h:outputText value="Fecha:"/>
+                            <h:outputText value="#{ventaBean.venta.fecha}" title="Fecha"/>
+                            <h:outputText value="Total:"/>
+                            <h:outputText value="#{ventaBean.venta.totalVenta}" title="TotalVenta"/>
+                            <h:outputText value="Producto:"/>
+                            <h:outputText value="#{ventaBean.venta.productoId.nombreProducto}" title="ProductoId"/>
+                            <h:outputText value="Atendido:"/>
+                            <h:outputText value="#{ventaBean.venta.usuarioId.nombre}" title="VendedorId"/>
+                        </p:panelGrid>
+                        
+                        
+                         
+                        <p:commandButton action="#{ventaBean.eliminar()}" icon="pi pi-times" value="Eliminar" styleClass="rounded-button ui-button-danger"/>
+                 
+                        <p:commandButton action="#{ventaBean.listaVenta()}"  icon="pi pi-fast-backward" value="Regresar" styleClass="rounded-button ui-button-help" />
+                    </h:form>
+                </f:view>
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
