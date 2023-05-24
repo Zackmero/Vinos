@@ -5,23 +5,22 @@
  */
 package mx.vinos.BL;
 
+import java.util.List;
 import javax.ejb.Local;
 import mx.vinos.error.Codigo;
 import mx.vinos.modelo.Rol;
 
-/**
- *
- * @author Migue
- */
 @Local
 public interface RolBLLocal {
 
     Codigo agregar(Rol rol);
+
+    Codigo eliminar(Rol rol);
+
+    Codigo editar(Rol rol);
+
+    Rol buscarPorId(int id);
     
-      Codigo eliminar(Rol rol);
-      
-        Codigo editar(Rol rol);
-        
-           Rol buscarPorId(int id);
-    
+    List<Rol> getAll();
+
 }
