@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/Principal.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                
+                <p:commandButton action="#{permisoBean.agregar()}" value="Agregar" rendered="#{permisoBean.permiso.id==null}" icon="pi pi-user-plus" styleClass="rounded-button ui-button-success ui-button-outlined" />
+                <p:commandButton action="#{permisoBean.editar()}" value="Editar" rendered="#{permisoBean.permiso.id!=null}" icon="pi pi-user-edit" styleClass="rounded-button ui-button-warning ui-button-outlined"/>
+                <p:commandButton action="PermisoList.xhtml" value="Canselar" immediate="true" icon="pi pi-times-circle" styleClass="rounded-button ui-button-danger ui-button-outlined" />
+            </ui:define>
+
+            <ui:define name="content">
+                
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="#{permisoBean.titulo}"/></h1>
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Id:" for="id" />
+                            <p:inputText id="id" value="#{permisoBean.permiso.id}" title="Id" required="true" requiredMessage="The Id field is required."/>
+                            <p:outputLabel value="TipoPermiso:" for="tipoPermiso" />
+                            <p:inputText id="tipoPermiso" value="#{permisoBean.permiso.tipoPermiso}" title="TipoPermiso" required="true" requiredMessage="The TipoPermiso field is required."/>
+                        </p:panelGrid>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
