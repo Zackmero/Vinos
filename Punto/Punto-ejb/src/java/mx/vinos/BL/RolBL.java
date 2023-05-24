@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.vinos.BL;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import mx.vinos.DAO.RolDAO;
 import mx.vinos.error.Codigo;
 import mx.vinos.modelo.Rol;
-
-/**
- *
- * @author Migue
- */
+/*
+@autor Isaac
+*/
 @Stateless
 public class RolBL implements RolBLLocal {
 
@@ -23,9 +17,6 @@ public class RolBL implements RolBLLocal {
         RolDAO rd = new RolDAO();
         rd.crear(rol);
 
-        /* for(Permisorol pr : rol.getPermisorolList()){
-            prd.crear(pr);
-        }*/
         return Codigo.OK;
     }
 
@@ -34,9 +25,6 @@ public class RolBL implements RolBLLocal {
         RolDAO rd = new RolDAO();
         rd.eliminar(rol);
 
-        /* for(Permisorol pr : rol.getPermisorolList()){
-            prd.crear(pr);
-        }*/
         return Codigo.OK;
     }
 
@@ -46,9 +34,6 @@ public class RolBL implements RolBLLocal {
         RolDAO rd = new RolDAO();
         rd.editar(rol);
 
-        /* for(Permisorol pr : rol.getPermisorolList()){
-            prd.crear(pr);
-        }*/
         return Codigo.OK;
 
     }
@@ -59,6 +44,12 @@ public class RolBL implements RolBLLocal {
         RolDAO rd = new RolDAO();
         return rd.getPorId(id);
 
+    }
+
+    @Override
+    public List<Rol> getAll() {
+        RolDAO rol = new RolDAO();
+        return rol.getTodo();
     }
 
 }
