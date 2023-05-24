@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mx.vinos.BL;
+
+import mx.vinos.error.Codigo;
+import java.util.List;
+import javax.ejb.Stateless;
+import mx.vinos.DAO.UsuarioDAO;
+import mx.vinos.modelo.Producto;
+import mx.vinos.modelo.Usuario;
+
+/**
+ *
+ * @author Zacarias Mercado
+ */
+@Stateless
+public class UsuarioBL implements UsuarioBLLocal {
+
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
+    @Override
+    public Codigo agregar(Usuario usuario) {
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+
+        if (usuario != null) {
+            usuarioDao.crear(usuario); //Enviar peticion al DAO para agregar usuario
+            System.out.println("Vendedor creado en el EJB");
+            return Advertencias.NADA;
+        } else {
+            return Advertencias.ENTIDAD_VACIA;
+        }
+    }
+
+    @Override
+    public Codigo editar(Usuario per) {
+        UsuarioDAO perDAO = new UsuarioDAO();
+        perDAO.editar(per); //Enviar peticion al DAO para modificar usuario
+        System.out.println("Usuario modificado en el EJB");
+        return Advertencias.NADA;
+    }
+
+    @Override
+    public Codigo eliminar(Usuario per) {
+        UsuarioDAO perDAO = new UsuarioDAO();
+        perDAO.elimnar(per); //Enviar peticion al DAO para eliminar usuario
+        System.out.println("Usuario eliminado en el EJB");
+        return Advertencias.NADA;
+    }
+
+    @Override
+    public Usuario buscarUsuarioPorID(int id) {
+        UsuarioDAO perDAO = new UsuarioDAO();
+        return perDAO.getPorID(id);
+    }
+
+    @Override
+    public List<Usuario> getTodos() {
+        UsuarioDAO p = new UsuarioDAO();
+        System.out.println("Se muestran todos los usuarioes en el EJB");
+        return p.getTodo();
+    }
+
+  
+}
